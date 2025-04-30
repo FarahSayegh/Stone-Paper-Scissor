@@ -1,7 +1,7 @@
 #include <iostream>
 #include<cstdlib>
 
-enum choice { rock = 1, paper = 2, sicssor = 3 };
+enum choice { rock = 1, paper = 2, scissor = 3 };
 enum winner { player = 1, computer = 2, draw = 3 };
 
 struct RoundInfo
@@ -79,13 +79,13 @@ winner decideRoundWinner(RoundInfo round)
     if (round.playerChoice == round.computerChoice)
         return winner::draw;
 
-    else if (round.playerChoice == choice::rock && round.computerChoice == choice::sicssor)
+    else if (round.playerChoice == choice::rock && round.computerChoice == choice::scissor)
         return winner::player;
 
     else if (round.playerChoice == choice::paper && round.computerChoice == choice::rock)
         return winner::player;
 
-    else if (round.playerChoice == choice::sicssor && round.computerChoice == choice::paper)
+    else if (round.playerChoice == choice::scissor && round.computerChoice == choice::paper)
         return winner::player;
 
     else
